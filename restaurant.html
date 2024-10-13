@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delicious Bites Restaurant</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to the external CSS file -->
+    <script src="script.js" defer></script> <!-- Link to the external JavaScript file -->
+</head>
+<body>
+    <header>
+        <div class="container" style="display: flex; align-items: center;">
+            <img src="delicious bites.png" alt="Delicious Bites Logo" style="height: 50px; margin-right: 15px;">
+            <h1 style="font-size: 1.5rem; color: #c19a6b;">Delicious Bites</h1>
+            <nav style="margin-left: auto;">
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#menu">Menu</a></li>
+                    <li><a href="#location">Location</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#cart" id="cart-link">Cart (<span id="cart-count">0</span>)</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>    
+
+    <main>
+        <section id="about" class="container">
+            <h1>Welcome to Delicious Bites</h1>
+            <p>Experience the finest cuisine in town, crafted with love and passion. Our chefs use only the freshest ingredients to create mouthwatering dishes that will tantalize your taste buds.</p>
+        </section>
+
+        <section id="menu" class="container">
+            <h2>Our Menu</h2>
+            <div class="menu-grid">
+                <div class="menu-item">
+                    <img src="salmon.jpeg" alt="Grilled Salmon">
+                    <h3>Grilled Salmon</h3>
+                    <p>Fresh Atlantic salmon grilled to perfection, served with seasonal vegetables.</p>
+                    <span class="price">$22.99</span>
+                    <button class="add-to-cart" data-name="Grilled Salmon" data-price="22.99">Add to Cart</button>
+                </div>
+                <div class="menu-item">
+                    <img src="alfredo.jpeg" alt="Chicken Alfredo">
+                    <h3>Chicken Alfredo</h3>
+                    <p>Creamy Alfredo sauce with grilled chicken over fettuccine pasta.</p>
+                    <span class="price">$18.99</span>
+                    <button class="add-to-cart" data-name="Chicken Alfredo" data-price="18.99">Add to Cart</button>
+                </div>
+                <div class="menu-item">
+                    <img src="pizza.jpeg" alt="Vegetarian Pizza">
+                    <h3>Vegetarian Pizza</h3>
+                    <p>Hand-tossed pizza topped with fresh vegetables and mozzarella cheese.</p>
+                    <span class="price">$16.99</span>
+                    <button class="add-to-cart" data-name="Vegetarian Pizza" data-price="16.99">Add to Cart</button>
+                </div>
+                <div class="menu-item">
+                    <img src="beef.jpeg" alt="Beef Tenderloin">
+                    <h3>Beef Tenderloin</h3>
+                    <p>Prime cut beef tenderloin with red wine reduction and roasted potatoes.</p>
+                    <span class="price">$28.99</span>
+                    <button class="add-to-cart" data-name="Beef Tenderloin" data-price="28.99">Add to Cart</button>
+                </div>
+                <div class="menu-item">
+                    <img src="paella.jpeg" alt="Seafood Paella">
+                    <h3>Seafood Paella</h3>
+                    <p>Traditional Spanish rice dish with a medley of fresh seafood.</p>
+                    <span class="price">$24.99</span>
+                    <button class="add-to-cart" data-name="Seafood Paella" data-price="24.99">Add to Cart</button>
+                </div>
+                <div class="menu-item">
+                    <img src="mushroom.jpeg" alt="Mushroom Risotto">
+                    <h3>Mushroom Risotto</h3>
+                    <p>Creamy Arborio rice with a blend of wild mushrooms and Parmesan cheese.</p>
+                    <span class="price">$19.99</span>
+                    <button class="add-to-cart" data-name="Mushroom Risotto" data-price="19.99">Add to Cart</button>
+                </div>
+                <div class="menu-item">
+                    <img src="lamb.jpeg" alt="Lamb Chops">
+                    <h3>Lamb Chops</h3>
+                    <p>Grilled lamb chops with mint jelly and roasted Mediterranean vegetables.</p>
+                    <span class="price">$26.99</span>
+                    <button class="add-to-cart" data-name="Lamb Chops" data-price="26.99">Add to Cart</button>
+                </div>
+                <div class="menu-item">
+                    <img src="sushi.jpeg" alt="Sushi Platter">
+                    <h3>Sushi Platter</h3>
+                    <p>Assorted sushi rolls with fresh fish, served with wasabi and pickled ginger.</p>
+                    <span class="price">$25.99</span>
+                    <button class="add-to-cart" data-name="Sushi Platter" data-price="25.99">Add to Cart</button>
+                </div>
+                <div class="menu-item">
+                    <img src="mousse.jpeg" alt="Chocolate Mousse">
+                    <h3>Chocolate Mousse</h3>
+                    <p>Rich and creamy chocolate mousse topped with whipped cream.</p>
+                    <span class="price">$7.99</span>
+                    <button class="add-to-cart" data-name="Chocolate Mousse" data-price="7.99">Add to Cart</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="cart" class="container" style="display: none;">
+            <h2>Your Cart</h2>
+            <div id="cart-items"></div>
+            <p>Total: $<span id="total-price">0.00</span></p>
+            <button id="checkout-button">Checkout</button>
+        </section>
+
+        <section id="location" class="container">
+            <h2>Our Location</h2>
+            <p>Visit us at:</p>
+            <address>
+                123 Delicious St,<br>
+                Food City, FC 12345
+            </address>
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3105.9822350336635!2d-77.03687068467888!3d38.89511127957041!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89b7b7b1e92c41c5%3A0xdec09e5c45ee88c5!2s123%20Delicious%20St%2C%20Washington%2C%20DC%2011234%2C%20USA!5e0!3m2!1sen!2sin!4v1629101234567!5m2!1sen!2sin" allowfullscreen></iframe>
+            </div>
+        </section>
+
+        <section id="contact" class="container">
+            <h2>Contact Us</h2>
+            <form>
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <textarea rows="4" placeholder="Your Message" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Delicious Bites. All Rights Reserved.</p>
+        <p>Follow us on social media:</p>
+        <p>
+            <a href="https://www.facebook.com" target="_blank" style="color: #e0dedf;">Facebook</a> |
+            <a href="https://www.instagram.com" target="_blank" style="color: #e0dedf;">Instagram</a> |
+            <a href="https://www.twitter.com" target="_blank" style="color: #e0dedf;">Twitter</a>
+        </p>
+    </footer>
+</body>
+</html>
